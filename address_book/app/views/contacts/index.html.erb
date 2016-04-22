@@ -1,0 +1,13 @@
+<ol>
+  <% @contacts.each do |contact| %>
+    <li>
+      <%= contact.name %>
+    </li>
+  <% end %>
+  <%= link_to("New Contact", contact_create_new_path(@contact))%>
+</ol>
+
+
+
+<!-- <h1>Contacts#index</h1>
+<p>Find me in app/views/contacts/index.html.erb</p> -->
