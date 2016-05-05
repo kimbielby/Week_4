@@ -1,0 +1,17 @@
+<h1>Contact Details</h1>
+
+<p>
+  <ul>
+    <li>
+      Name: <%= @contact.name %>,
+      Address: <%= @contact.address %>,
+      Email: <%= @contact.email_address %>,
+      Phone: <%= @contact.phone_number %>
+    </li>
+  </ul>
+</p>
+<p>
+  <%= form_for @contact.id do |favourite| %>
+  <%= favourite.button %>
+<% end %>
+</p>

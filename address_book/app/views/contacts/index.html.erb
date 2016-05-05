@@ -2,10 +2,17 @@
   <% @contacts.each do |contact| %>
     <li>
       <%= contact.name %>
+      -
+      <%= link_to "Contact Information", contact_info_path(contact) %>
     </li>
   <% end %>
+
   <%= link_to("New Contact", contact_create_new_path(@contact))%>
 </ol>
+
+
+
+
 
 
 

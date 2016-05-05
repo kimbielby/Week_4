@@ -3,6 +3,10 @@ class ContactsController < ApplicationController
     @contacts = Contact.order(name: :asc)
   end
 
+  def show
+    @contact = Contact.find_by(id: params[:id])
+  end
+
   def new
     @contact = Contact.new
   end
@@ -13,10 +17,11 @@ class ContactsController < ApplicationController
       :address => params[:contact][:address],
       :phone_number => params[:contact][:phone],
       :email_address => params[:contact][:email])
-
-    @contact.save
-
-    redirect_to("/contacts")
+    if @contact.save
+      redirect_to("/contacts/index")
+    else
+      render "new"
+    end
   end
 end
 
